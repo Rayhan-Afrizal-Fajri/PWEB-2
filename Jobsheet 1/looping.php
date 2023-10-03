@@ -7,7 +7,7 @@
 <body>
     <?php
 
-    echo "Perulangen for bilangan genap dari 0 sampai 10 <br>";
+    echo "Perulangan for bilangan genap dari 0 sampai 10 <br>";
     for($x = 0; $x <=10; $x+=2)
     {
         if ($x % 2 == 0)
@@ -34,7 +34,7 @@
     {
         $isPrima = true;
 
-        for ($i = 2; $i < sqrt($y); $i++)
+        for ($i = 2; $i <= sqrt($y); $i++)
         {
             if ($y % $i == 0)
             {

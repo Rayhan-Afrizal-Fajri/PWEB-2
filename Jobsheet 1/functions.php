@@ -32,7 +32,7 @@
     
     <?php
 
-    if ($_SERVER['REQUEST_METHOD'] == 'POST')
+    if (isset ($_POST['submit']))
     {
         $p = $_POST['p'];
         $l  = $_POST['l'];

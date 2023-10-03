@@ -7,7 +7,7 @@
 <body>
     <?php
 
-    $integer = 25;
+    $integer = "25";
     $string = "Rayhan Afrizal";
     $boolean = true;
 
