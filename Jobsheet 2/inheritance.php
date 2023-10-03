@@ -2,32 +2,31 @@
 
 class manusia
 {
-    private $nama_saya;
+    protected $nama_depan;
 
     function panggil_nama($saya)
     {
-        $this->nama_saya = $saya;
+        $this->nama_depan = $saya;
     }
 
     function ambil_nama()
     {
-        return $this->nama_saya;
+        return $this->nama_depan;
     }
 }
 
 //class turunan atau sub class
-
 class mahasiswa extends manusia
 {
-    protected $nama_mahasiswa;
+    private $nama_belakang;
 
     public function panggil_mahasiswa($mahasiswa)
     {
-        $this->nama_mahasiswa = $mahasiswa;
+        $this->nama_belakang = $mahasiswa;
     }
-    function ambil_mahasiswa()
+    function nama_lengkap()
     {
-        return $this->nama_mahasiswa;
+        return "Nama Depan : " . $this->nama_depan  . "<br>Nama Belakang : " . $this->nama_belakang;
     }
 }
 
@@ -38,8 +37,7 @@ $informatika->panggil_nama("Rayhan Afrizal ");
 $informatika->panggil_mahasiswa("Fajri");
 
 //tampilkan isi property
-echo "Nama Depan : " . $informatika->ambil_nama() . "<br>";
-echo "Nama Belakang : " . $informatika->ambil_mahasiswa() . "<br>";
+echo $informatika->nama_lengkap();
 
 
 ?>

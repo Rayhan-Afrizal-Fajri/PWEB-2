@@ -5,7 +5,7 @@ class mahasiswa
 {
     //property public dan private
     public $nama;
-    private $nim="220302022";
+    protected $nim="220302022";
 
     //public method
     public function tampilkan_nama()
