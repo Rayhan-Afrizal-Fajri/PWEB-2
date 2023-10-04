@@ -9,12 +9,12 @@
 <form method="post">
     Nilai x =
     <input type="number" name ="x" required>
-    <input type="submit" value = "cek">
+    <input type="submit" value = "cek" name="simpan">
 </form>
 
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] == "POST")
+if (isset($_POST['simpan']))
 {
     $x = $_POST["x"];
 
