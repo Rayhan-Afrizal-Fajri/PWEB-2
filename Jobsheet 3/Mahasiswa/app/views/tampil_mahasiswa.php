@@ -9,16 +9,27 @@
       crossorigin="anonymous" />
     <title>Tampil mahasiswa</title>
 </head>
+<?php include "navbar.php" ?>
 <body>
-    <?php
+    <div class="px-5">
 
+    <?php
     include '../classes/database.php';
     $db = new database;
     ?>
 
+    <?php
+
+    if(isset ($_GET['success']) && $_GET['success']=='true')
+    {
+      echo '<div id="successAlert" class ="alert alert-success" role="alert">Update Berhasil!</div>';
+    }
+
+    ?>
+
     <h3>Data Mahasiswa</h3>
-    <a href="input_mahasiswa.php" class = "btn btn-primary">Tambah Mahasiswa</a><br><br>
-    <table class ="table table-striped table bordered" style = "width : 80%">
+    <a href="input_mahasiswa.php" class = "btn btn-primary mb-2 mt-3">Tambah Mahasiswa</a>
+    <table class ="table table-striped table-bordered" style = "width : 90%">
 
     <tr style = "text-align : center">
     <th>No</th>
@@ -28,15 +39,15 @@
     <th>Semester</th>
     <th>Aksi</th>
     </tr>
-    
+
     <?php
 
     $no = 1;
     foreach ($db->tampil_mahasiswa() as $x)
-{
+    {
     ?>
-    
-    
+
+
     <tr>
         <td><?php echo $no++ ?></td>
         <td><?php echo $x['nim'] ?></td>
@@ -54,5 +65,26 @@
 
 
     </table>
+    </div>
+
+    <script>
+      function hideAlert()
+      {
+        var successAlert = document.getElementById("successAlert");
+        if (successAlert)
+        {
+          successAlert.style.display = "none";
+        }
+      }
+
+      var successAlert = document.getElementById("successAlert");
+      if(successAlert)
+      {
+        successAlert.style.display = "block";
+
+        setTimeout(hideAlert, 2000);
+      }
+    </script>
 </body>
+</div>
 </html>

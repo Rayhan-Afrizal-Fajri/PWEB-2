@@ -14,7 +14,7 @@ if ($aksi =="tambah")
 else if ($aksi == "update")
 {
     $db->update($_POST['id_pengajuan'], $_POST['nama'], $_POST['tanggal_pengajuan'], $_POST['alasan']);
-    header("location:tampil_pengajuan.php");
+    header("location:tampil_pengajuan.php?id_pengajuan=$id_pengajuan&aksi=edit&success=true");
 }
 
 else if ($aksi == "hapus")

@@ -20,7 +20,7 @@ class database
         {
             $hasil[] = $d;
         }
-            return $hasil
+            return $hasil;
     }
 
     function tambah_mhs($nama, $tanggal_pengajuan, $alasan)

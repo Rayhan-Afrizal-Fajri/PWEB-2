@@ -9,11 +9,12 @@
       crossorigin="anonymous" />
     <title>Document</title>
 </head>
+<?php include "navbar.php"; ?>
 <body>
+    <div class="px-5">
     <h3>Tambah Data Pengajuan</h3> <br>
     <form action="proses_pengajuan.php?aksi=tambah" method="post">
-        <div class="mb-3">
-        <table border = "1" class = "table table-sm" style="width : 30%">
+        <table border = "1" class = "table table-sm" style="width : 50%">
                 <tr>
                 <td>Nama</td>
                 <td><input type="text" name="nama" class = "form-control" required></td>

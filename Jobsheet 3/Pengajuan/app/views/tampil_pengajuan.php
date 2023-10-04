@@ -9,20 +9,36 @@
       crossorigin="anonymous" />
     <title>Document</title>
 </head>
-<body>
-
 <?php
 
-//memanggil class database
-include '../classes/database.php';
-//instansiasi class database
-$db = new database;
-?>
+include "navbar.php";
 
-<!-- <div class="container"> -->
+?>
+<body>
+
+
+    <div class="px-5">
+    <?php
+
+//memanggil class database
+    include '../classes/database.php';
+    //instansiasi class database
+    $db = new database;
+    ?>
+
+    <?php
+
+    if (isset($_GET['success']) && $_GET['success'] == "true")
+    {
+        echo '<div class="alert alert-success" id="successAlert" role="alert">Update Berhasil!</div>';
+    }
+
+    ?>
+
+    <!-- <div class="container"> -->
     <h3>Data Pengajuan Cuti Mahasiswa</h3><br>
     <a href="input_pengajuan.php" class="btn btn-primary">Tambah Pengajuan</a><br><br>
-    <table class="table table-striped table-bordered" border ="1" style ="width : 80%">
+    <table class="table table-striped table-bordered" border ="1" style ="width : 90%">
         <tr style ="text-align : center ">
             <th>No</th>
             <th>Nama</th>
@@ -51,7 +67,24 @@ $db = new database;
         ?>
 
     </table>
-<!-- </div> -->
+    </div>
+    <script>
+        function hideAlert()
+        {
+            var successAlert = document.getElementById('successAlert');
+            if (successAlert)
+            {
+                successAlert.style.display = 'none';
+            }
+        }
+
+            var successAlert = document.getElementById('successAlert');
+            if (successAlert)
+            {
+                successAlert.style.display = 'block';
+                setTimeout(hideAlert, 2000);
+            }
+    </script>
 
 </body>
 </html>
